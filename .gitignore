@@ -1,0 +1,5 @@
+/.terraform/
+.terraform.lock.hcl
+/prod/terraform.tfstate
+/prod/terraform.tfstate.backup
+/prod/.terraform/
