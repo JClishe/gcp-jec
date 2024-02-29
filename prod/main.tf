@@ -193,19 +193,3 @@ resource "google_storage_bucket" "terraform-state" {
   storage_class               = "STANDARD"
 }
 
-resource "google_storage_bucket" "ds1618-hyperbackup" {
-  name                        = "${google_project.prod_project.project_id}-ds1618-hperbackup"
-  location                    = "US-EAST5"
-  uniform_bucket_level_access = true
-  storage_class               = "STANDARD"
-
-  lifecycle_rule {
-    condition {
-      age = 7
-    }
-    action {
-      type          = "SetStorageClass"
-      storage_class = "NEARLINE"
-    }
-  }
-}
